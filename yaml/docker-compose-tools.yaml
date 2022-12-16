@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  senzing-tools:
+    container_name: senzing-tools
+    environment:
+      SENZING_ENGINE_CONFIGURATION_JSON: ${SENZING_ENGINE_CONFIGURATION_JSON}
+    image: senzing/senzingapi-tools:latest
+    networks:
+      - backend
+    restart: on-failure
+    stdin_open: true
+    tty: true
+
+
+networks:
+  backend:

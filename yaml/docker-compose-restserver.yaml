@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  senzing-rest-server:
+    container_name: senzing-rest-server
+    environment:
+      SENZING_API_SERVER_ALLOWED_ORIGINS: '*'
+      SENZING_API_SERVER_BIND_ADDR: 'all'
+      SENZING_API_SERVER_ENABLE_ADMIN: 'true'
+      SENZING_API_SERVER_INIT_JSON: ${SENZING_ENGINE_CONFIGURATION_JSON}
+      SENZING_API_SERVER_PORT: '8250'
+      SENZING_ENGINE_CONFIGURATION_JSON: ${SENZING_ENGINE_CONFIGURATION_JSON}
+    image: senzing/senzing-api-server:latest
+    networks:
+      - backend
+    ports:
+      - '8250:8250'
+    restart: on-failure
+
+networks:
+  backend:

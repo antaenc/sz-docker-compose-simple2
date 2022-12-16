@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  swaggerui:
+    container_name: swaggerui
+    environment:
+      SWAGGER_JSON: /rest_api_spec.json
+    image: swaggerapi/swagger-ui:latest
+    networks:
+      - backend
+    ports:
+      - 9180:8080
+    restart: on-failure
+    volumes:
+      - ../data/rest_api_spec.json:/rest_api_spec.json
+
+networks:
+  backend:

@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  senzing-loader:
+    environment:
+      LC_CTYPE: en_US.utf8
+      SENZING_ENGINE_CONFIGURATION_JSON: ${SENZING_ENGINE_CONFIGURATION_JSON}
+      SENZING_INPUT_FILE: /input/loadtest-dataset-5K-with-datasource.json
+    image: senzing/file-loader:latest
+    networks:
+      - backend
+    restart: on-failure
+    user: "${ID}"
+    volumes: 
+      - ../data:/input
+      - ../data:/output
+
+networks:
+  backend:
