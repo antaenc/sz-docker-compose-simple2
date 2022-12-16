@@ -2,7 +2,7 @@
 
 Simple set of Docker Compose files to start a demonstrable and example Senzing stack using pre-built container images.
 
-This stack emulates many components of one type of Senzing (architectural deployment pattern)[https://senzing.zendesk.com/hc/en-us/articles/360051562333-Senzing-Architectural-Pattern-for-Perpetual-Insights].
+This stack emulates many components of one type of Senzing [architectural deployment pattern](https://senzing.zendesk.com/hc/en-us/articles/360051562333-Senzing-Architectural-Pattern-for-Perpetual-Insights).
 
 ## Prerequisites
 
