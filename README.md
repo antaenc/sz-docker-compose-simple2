@@ -31,7 +31,7 @@ When localhost is referenced below it is assumed all actions are on the same mac
 
 Run commands from within the yaml directory.
 
-Export the SENZING_ENGINE_CONFIGURATION_JSON env var on the host with the Senzing engine configuration, change <host_name_here> to the hosts host name:
+Export the SENZING_ENGINE_CONFIGURATION_JSON env var on the host with the Senzing engine configuration, change `<host_name_here>` to the hosts host name:
 
 ```console
 export SENZING_ENGINE_CONFIGURATION_JSON='{"PIPELINE":{"CONFIGPATH":"/etc/opt/senzing","LICENSESTRINGBASE64":"","RESOURCEPATH":"/opt/senzing/g2/resources","SUPPORTPATH":"/opt/senzing/data"},"SQL":{"CONNECTION":"postgresql://postgres:password@<host_name_here>:5432:g2"}}'
