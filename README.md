@@ -2,7 +2,7 @@
 
 Simple set of Docker Compose files to start a demonstrable and example Senzing stack using pre-built container images.
 
-This stack emulates many components of one type of Senzing  architectural deployment patterns: https://senzing.zendesk.com/hc/en-us/articles/360051562333-Senzing-Architectural-Pattern-for-Perpetual-Insights
+This stack emulates many components of one type of Senzing (architectural deployment pattern)[https://senzing.zendesk.com/hc/en-us/articles/360051562333-Senzing-Architectural-Pattern-for-Perpetual-Insights].
 
 ## Prerequisites
 
@@ -14,6 +14,16 @@ This stack emulates many components of one type of Senzing  architectural deploy
 ## Demonstration
 
 This demonstrator utilises a number of example Docker images available at https://github.com/Senzing.
+
+- (File Loader)[https://github.com/Senzing/file-loader]
+- (Postgres Initialization)[https://github.com/Senzing/init-postgresql]
+- (REST API Server)[https://github.com/Senzing/senzing-api-server]
+- (Demo Web Application)[https://github.com/Senzing/entity-search-web-app]
+
+Additional non-Senzing images used:
+
+- (PostgreSQL)[https://hub.docker.com/_/postgres]
+- (Swagger-ui)[https://hub.docker.com/r/swaggerapi/swagger-ui]
 
 ## Running
 
@@ -33,7 +43,7 @@ export SENZING_ENGINE_CONFIGURATION_JSON='{"PIPELINE":{"CONFIGPATH":"/etc/opt/se
 docker-compose -f docker-compose-postgres.yaml up --detach
 ```
 
-### Postgres Init
+### Postgres Initialization
 
 This task only needs to be performed once on a new Postgres database, it creates the Senzing schema and sets a default Senzing configuration. 
 
@@ -51,7 +61,7 @@ ID="${UID}" docker-compose -f docker-compose-file-loader.yaml up
 
 ### Senzing Tools
 
-The Senzing Tools provide CLI utilities for interacting with Senzing such as the Exploratory Data Analysis (EDA) tools. 
+The Senzing Tools provide CLI utilities for interacting with Senzing such as G2Command, G2ConfigTool and the Exploratory Data Analysis (EDA) tools. 
 
 ```docker-compose -f docker-compose-tools.yaml up --detach```
 
